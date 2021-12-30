@@ -1,8 +1,8 @@
 print("Calculadora, eliga una operacion")
-print("1  - SUMA")
-print("2  - RESTA ")
-print("3  - MULTIPLICACION ")
-print("4  - DIVICION ")
+print("1  - suma")
+print("2  - resta ")
+print("3  - Multiplicacion ")
+print("4  - Divicion ")
 
 opcion = int(input("ingresar operacion"))
 
@@ -18,6 +18,9 @@ def Multiplicacion(a, b):
 def Divicion(a, b):
     return(a // b)
 
+    
+    
+    
     
 if (opcion == 1):
     
@@ -43,11 +46,17 @@ elif (opcion == 3):
     print(Multiplicacion(a, b))
 
 
+    
+    
 elif (opcion == 4):
     a = int(input("ingrese un numero"))
     b = int(input("ingrese otro numero"))
-    print(" El resultado es")
-    print(Divicion(a, b))
+    if (b == 0):
+        print("no se puede dividir en 0")
+    else:
+        print(" El resultado es")
+        print(Divicion(a, b))
+        
 else: 
     print("Eliga una operacion del 1 al 4")
-    opcion = int(input("ingresar operacion"))    
+    opcion = int(input("ingresar operacion")) 
