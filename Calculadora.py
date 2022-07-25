@@ -1,62 +1,51 @@
-print("Calculadora, eliga una operacion")
-print("1  - suma")
-print("2  - resta ")
-print("3  - Multiplicacion ")
-print("4  - Divicion ")
+def suma(a,b):
+    return a + b
+    
+def resta(a,b):
+    return a - b
 
-opcion = int(input("ingresar operacion"))
+def multiplicacion(a,b):
+    return a * b
 
-def suma(a, b):
-    return(a + b)
-    
-def resta(a, b):
-    return(a - b)
-    
-def Multiplicacion(a, b):
-    return(a * b)
-    
-def Divicion(a, b):
-    return(a // b)
+def divicion(a,b):
+    return a // b
 
-    
-    
-    
-    
-if (opcion == 1):
-    
-    a = int(input("ingrese un numero"))
-    b = int(input("ingrese otro numero"))
-    print(" El resultado es")
-    print(suma(a, b))
-    
-   
+def menu():
+    bandera = False
+    while bandera == False:
+        print("1- suma")
+        print("2- resta")
+        print("3- multiplicacion")
+        print("4- divicion")
+        print("5- salir")
+        seleccion = int(input("seleccione una opcion del 1 al 5: "))
 
-elif (opcion == 2):
+
+        if seleccion == 1:
+            a = int(input("seleccione un valor: "))
+            b = int(input("seleccione otro valor: "))
+            print("el resultado de la operacion es",suma(a,b))
+            print(menu())
+    
+        elif seleccion == 2:
+            a = int(input("seleccione un valor: "))
+            b = int(input("seleccione otro valor: "))
+            print("el resultado de la operacion es",resta(a,b))
+            print(menu())
      
-    a = int(input("ingrese un numero"))
-    b = int(input("ingrese otro numero"))
-    print(" El resultado es")
-    print(resta(a, b))
-     
-elif (opcion == 3):
-     
-    a = int(input("ingrese un numero"))
-    b = int(input("ingrese otro numero"))
-    print(" El resultado es")
-    print(Multiplicacion(a, b))
-
-
-    
-    
-elif (opcion == 4):
-    a = int(input("ingrese un numero"))
-    b = int(input("ingrese otro numero"))
-    if (b == 0):
-        print("no se puede dividir en 0")
-    else:
-        print(" El resultado es")
-        print(Divicion(a, b))
+        elif seleccion == 3:
+            a = int(input("seleccione un valor: "))
+            b = int(input("seleccione otro valor: "))
+            print("el resultado de la operacion es",multiplicacion(a,b))
+            print(menu())
         
-else: 
-    print("Eliga una operacion del 1 al 4")
-    opcion = int(input("ingresar operacion")) 
+        elif seleccion == 4:
+            a = int(input("seleccione un valor: "))
+            b = int(input("seleccione otro valor: "))
+            print("el resultado de la operacion es",divicion(a,b))
+            print(menu())
+        
+        elif seleccion == 5:
+            bandera = True
+        return ""    
+print(menu())    
